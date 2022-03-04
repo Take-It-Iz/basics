@@ -1,18 +1,18 @@
-#definition of the parental class 
+# definition of the parental class 
 class Human:
-    #attributes common for all instances; 
-    #they can be changed dynamically using dot-notation 
+    # attributes common for all instances; 
+    # they can be changed dynamically using dot-notation 
     species = 'Homo Sapiens' 
-    _citizenship = 'Citizen of the world' #protected field
-    __bank_acc_password = 'qwerty1234' #private field
+    _citizenship = 'Citizen of the world' # protected field
+    __bank_acc_password = 'qwerty1234' # private field
 
-    #constructor
+    # constructor
     def __init__(self, name, last_name, age):
         self.name = name
         self.last_name = last_name
         self.age = age
 
-    #methods
+    # methods
     def __str__(self):
         print('I think, therefore I am')
 
@@ -30,3 +30,9 @@ class Human:
 
     def change_citizenship(self, citizenship):
         self._citizenship = citizenship
+
+    # because the method is bound to the object, Python always implicitly passes 
+    # the object to the method as the first argument;
+    # threfore if we try to call this method using object, we'll get TypeError
+    # def zero_args_method():
+    #     print('You won\'t get this far')
